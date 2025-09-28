@@ -7,7 +7,11 @@
 try:
     summa = int(input('Введите потраченную сумму: '))
 except ValueError:
-    print('Введите сумму.')
+    print('Введите число.')
+    exit()
+
+if summa < 0:
+    print('Сумма не может быть меньше нуля.')
     exit()
 
 if summa < 500:
