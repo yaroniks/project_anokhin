@@ -7,7 +7,7 @@
 def triangle_ps(a: int):
     p = a * 3
     s = (3**0.5 * a**2) / 4
-    print(f'Периметр = {p}\nПлощадь = {s}\n')
+    return p, s
 
 
 try:
@@ -18,9 +18,12 @@ except ValueError:
     print('Введите число.')
     exit()
 
-print('Первый треугольник:')
-triangle_ps(a1)
-print('Второй треугольник:')
-triangle_ps(a2)
-print('Третий треугольник:')
-triangle_ps(a3)
+p1, s1 = triangle_ps(a1)
+print(f'Первый треугольник:\nПериметр = {p1}\nПлощадь: {s1}\n')
+
+p1, s1 = triangle_ps(a2)
+print(f'Второй треугольник:\nПериметр = {p1}\nПлощадь: {s1}\n')
+
+p1, s1 = triangle_ps(a3)
+print(f'Третий треугольник:\nПериметр = {p1}\nПлощадь: {s1}\n')
+

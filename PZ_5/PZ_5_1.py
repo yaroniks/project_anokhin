@@ -4,7 +4,10 @@
 def sum_nums(n: int):
     if n < 1:
         return 0
-    return n * (n + 1) // 2
+    r = 0
+    for i in range(n):
+        r += i+1
+    return r
 
 
 try:
