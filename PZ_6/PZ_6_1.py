@@ -11,6 +11,6 @@ except ValueError:
 
 progres = [a]
 for i in range(9):
-    progres.append(progres[-1] + d)
+    progres.append(a + (i+1)*d)
 
 print(f'10 первых членов прогрессии: {progres}')
