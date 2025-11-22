@@ -12,6 +12,7 @@ if n % 2 != 0:
     exit()
 
 spisok = list(range(n))
+print(spisok)
 
 for i in range(0, len(spisok), 2):
     now = spisok[i]

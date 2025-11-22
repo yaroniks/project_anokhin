@@ -5,6 +5,9 @@
 text = input("Введите строку: ")
 
 prev = None
-for i in text:
-    if i.isalpha():
-        ...
+for i in range(1, len(text)):
+    if text[i-1].isalpha() and text[i].isalpha():
+        if text[i] < text[i-1]:
+            print(i)
+            exit()
+print(0)
