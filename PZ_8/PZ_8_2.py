@@ -3,11 +3,12 @@
 # с использованием функции найти максимальные продажи по каждому виду
 # продукции, результаты вывести на экран.
 
-def find_max_sales(sales: list[int]):
+def find_max_sales(sales: list[int]) -> int:
     return max(sales)
 
 
 text = 'апельсины 45 991 63 100 12 яблоки 13 47 26 0 16'
+print(text)
 
 data = {}
 product = None

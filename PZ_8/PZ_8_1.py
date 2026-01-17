@@ -7,4 +7,6 @@ output = {}
 for idx, key in enumerate(keys):
     output[key] = values[idx]
 
+print(keys)
+print(values)
 print(output)
