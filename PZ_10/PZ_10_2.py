@@ -8,7 +8,6 @@ import string
 with open('text18-3.txt', encoding='utf-16-le') as file:
     text = file.read()
 
-print('Содержимое:')
 print(text)
 
 split = text.split('\n')
@@ -19,8 +18,6 @@ for line in split[:4]:
             punctuation.append(char)
 print(f"\nКоличество знаков пунктуации: {len(punctuation)}")
 
+split[2] = ''.join([str(ord(i)) for i in split[3]])
 with open('new_file.txt', 'w', encoding='utf-16-le') as file:
-    split[2] = ''.join([str(ord(i)) for i in split[3]])
     file.write('\n'.join(split))
-
-# 16 min
