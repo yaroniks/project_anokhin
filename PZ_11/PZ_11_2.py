@@ -10,5 +10,3 @@ text = input('Введите строку: ')
 
 nums = find_numbers(text)
 print(list(nums))
-
-# 3 min

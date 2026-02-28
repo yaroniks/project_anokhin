@@ -19,5 +19,3 @@ ne_crat_tri = [i for i in spisok if i % 3 != 0]
 
 print(f'\nЧисла, кратные трём: {crat_tri}\nКоличество элементов: {len(crat_tri)}\n')
 print(f'Все остальные числа: {ne_crat_tri}\nКоличество элементов: {len(ne_crat_tri)}')
-
-# 7 min
