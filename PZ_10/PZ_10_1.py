@@ -18,9 +18,16 @@ except ValueError:
     exit()
 
 nums = [random.randint(-100, 100) for i in range(n)]
-even_numbers = [i**2 for i in nums if i % 2 == 0]
 
 with open('file.txt', 'w', encoding='utf-8') as file:
+    file.write(",".join(map(str, nums)))
+
+with open('file.txt', encoding='utf-8') as file:
+    nums = [i for i in map(int, file.readline().split(','))]
+
+even_numbers = [i**2 for i in nums if i % 2 == 0]
+
+with open('new_file.txt', 'w', encoding='utf-8') as file:
     file.write(
         f'Исходные данные: {nums}\n'
         f'Количество элементов: {len(nums)}\n'
