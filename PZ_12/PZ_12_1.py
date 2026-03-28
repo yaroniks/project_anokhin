@@ -2,7 +2,10 @@
 
 import random
 
-n = int(input("Введите размер матрицы: "))
+
+def print_matrix(matrix: list[list[int]]):
+    for i in matrix:
+        print(*i)
 
 
 def generate_matrix(n: int) -> list[list[int]]:
@@ -19,11 +22,7 @@ def change_main_diagonal(matrix: list[list[int]]) -> list[list[int]]:
     ]
 
 
-def print_matrix(matrix: list[list[int]]):
-    for i in matrix:
-        print(i)
-
-
+n = int(input("Введите размер матрицы: "))
 matrix = generate_matrix(n)
 
 print('Исходная матрица:')
