@@ -10,7 +10,7 @@ def print_matrix(matrix: list[list[int]]):
 
 def generate_matrix(n: int) -> list[list[int]]:
     return [
-        [random.randint(-100, 100) for j in range(n)]
+        [random.randint(5, 5) for j in range(n)]
         for i in range(n)
     ]
 

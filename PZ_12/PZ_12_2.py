@@ -2,6 +2,7 @@
 # сумму и среднее арифметическое.
 
 import random
+from functools import reduce
 
 
 def print_matrix(matrix: list[list[int]]):
@@ -11,17 +12,23 @@ def print_matrix(matrix: list[list[int]]):
 
 def generate_matrix(n: int) -> list[list[int]]:
     return [
-        [random.randint(-100, 100) for j in range(n)]
+        [random.randint(-5, 5) for j in range(n)]
         for i in range(n)
     ]
 
 
 def sum_avg_matrix(matrix: list[list[int]]) -> tuple[list[int], int, float]:
-    nums = []
-    for i in matrix:  # i - строка
-        for j in i:  # j - стобец
-            if j > 0 and j % 2 == 0:
-                nums.append(j)
+    # nums = []
+    # for i in matrix:  # i - строка
+    #     for j in i:  # j - стобец
+    #         if j > 0 and j % 2 == 0:
+    #             nums.append(j)
+
+    nums = list(filter(
+        lambda j: j > 0 and j % 2 == 0,
+        reduce(lambda x,y: x+y, matrix)
+    ))
+
     return nums, sum(nums), sum(nums) / len(nums)
 
 
