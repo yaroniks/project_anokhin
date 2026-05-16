@@ -18,17 +18,10 @@ def generate_matrix(n: int) -> list[list[int]]:
 
 
 def sum_avg_matrix(matrix: list[list[int]]) -> tuple[list[int], int, float]:
-    # nums = []
-    # for i in matrix:  # i - строка
-    #     for j in i:  # j - стобец
-    #         if j > 0 and j % 2 == 0:
-    #             nums.append(j)
-
     nums = list(filter(
         lambda j: j > 0 and j % 2 == 0,
         reduce(lambda x,y: x+y, matrix)
     ))
-
     return nums, sum(nums), sum(nums) / len(nums)
 
 
