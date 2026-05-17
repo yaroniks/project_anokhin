@@ -6,21 +6,23 @@
 import re
 
 
-def get_numbers_from_file(file_path: str) -> tuple[list, list]:
+def get_numbers_from_file(file_path: str, correct_filepath: str = './1.txt', incorrect_filepath: str = './2.txt') -> tuple[list, list]:
     """Возвращает два списка 1 - корректные 2 - некорректные"""
     with open(file_path, encoding='utf-8') as file:
         lines = file.readlines()
 
-    pattern = re.compile(r'\d{11}')
-    correct_numbers = [
-        pattern.search(i).group() for i in lines if pattern.search(i)
-    ]
+    numbers = [match.group() for i in lines if (match := re.search(r'\d+', i))]
+    correct_numbers = [n for n in numbers if len(n) == 11]
+    incorrect_numbers = [n for n in numbers if len(n) != 11]
 
-    incorrect_numbers = [
-        # re.search(r'\d.+', i).group() for i in lines if re.search(r'\d.+', i)
-    ]
+    with open(correct_filepath, 'w', encoding='utf-8') as file:
+        file.write('\n'.join(correct_numbers))
+    with open(incorrect_filepath, 'w', encoding='utf-8') as file:
+        file.write('\n'.join(incorrect_numbers))
 
     return correct_numbers, incorrect_numbers
 
 
-print(get_numbers_from_file('hotline.txt'))
+currect, incurrect = get_numbers_from_file('./hotline.txt')
+print(currect, len(currect))
+print(incurrect, len(incurrect))
